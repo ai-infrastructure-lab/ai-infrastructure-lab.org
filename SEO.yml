@@ -1,0 +1,6 @@
+models:
+  title: "{system.name} by {org.name}"
+  description: "{system.name} academic lab dedicated to AI industry research, AI technology assessment and research on digital sovereignty. Hosted at Radboud University Nijmegen, The Netherlands"
+compare:
+  title: Compare {names}
+  description: Comparison of {names} in terms of academic lab dedicated to AI industry research, AI technology assessment and research on digital sovereignty. Hosted at Radboud University Nijmegen, The Netherlands.

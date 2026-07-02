@@ -1,0 +1,13 @@
+items:
+
+  - url: https://www.itas.kit.edu/english/
+    title: Institute for Technology Assessment and Systems Analysis (ITAS), Karlsruhe Institute of Technology
+    image: images/partner-itas.png
+
+  - url: https://osai-index.eu
+    title: Open Source AI Index
+    image: images/partner-osai.svg
+
+  - url: https://futuresoflanguage.org
+    title: Futures of Language
+    image: images/partner-futures.png
