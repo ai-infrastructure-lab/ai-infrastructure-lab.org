@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AI Infrastructure Lab placeholder icon">
+  <rect width="512" height="512" rx="112" fill="#0b0f10"/>
+  <circle cx="142" cy="148" r="54" fill="#83d6bd"/>
+  <circle cx="370" cy="364" r="54" fill="#d8ff72"/>
+  <path d="M154 148h134c46 0 82 36 82 82v134" fill="none" stroke="#e8efe9" stroke-width="44" stroke-linecap="round"/>
+  <path d="M140 364h134c48 0 86-38 86-86" fill="none" stroke="#93a19b" stroke-width="32" stroke-linecap="round"/>
+</svg>

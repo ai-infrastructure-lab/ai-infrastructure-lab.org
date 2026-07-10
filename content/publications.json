@@ -1,0 +1,78 @@
+{
+  "generatedAt": "fixture",
+  "source": {
+    "provider": "fixture",
+    "libraryType": "user",
+    "libraryId": "local-fixture",
+    "collectionKey": "local-fixture"
+  },
+  "items": [
+    {
+      "key": "fixture-1",
+      "itemType": "journalArticle",
+      "title": "Mapping Compute Geographies: Data Centers, Cloud Regions, and AI Infrastructure",
+      "authors": [
+        "Andreas Liesenfeld",
+        "Arya Golkhandan",
+        "Daniel Bos"
+      ],
+      "year": 2026,
+      "date": "2026",
+      "publicationTitle": "Internet Policy Review",
+      "publisher": null,
+      "volume": "15",
+      "issue": "2",
+      "pages": "1-24",
+      "doi": "10.0000/fixture.compute-geographies",
+      "url": "https://doi.org/10.0000/fixture.compute-geographies",
+      "abstract": "Fixture publication used to test Zotero-synced publication layouts before API credentials are configured.",
+      "zoteroUrl": null,
+      "citation": null,
+      "updatedAt": "2026-07-09"
+    },
+    {
+      "key": "fixture-2",
+      "itemType": "conferencePaper",
+      "title": "Open Model Supply Chains and the Political Economy of AI Release Practices",
+      "authors": [
+        "Anne L. Gerdes",
+        "Andreas Liesenfeld"
+      ],
+      "year": 2025,
+      "date": "2025",
+      "publicationTitle": "Proceedings of the ACM Conference on Fairness, Accountability, and Transparency",
+      "publisher": "ACM",
+      "volume": null,
+      "issue": null,
+      "pages": "312-327",
+      "doi": null,
+      "url": "https://example.com/open-model-supply-chains",
+      "abstract": "Fixture conference paper for testing non-DOI publication links.",
+      "zoteroUrl": null,
+      "citation": null,
+      "updatedAt": "2026-07-09"
+    },
+    {
+      "key": "fixture-3",
+      "itemType": "bookSection",
+      "title": "Sovereign AI Infrastructure and the Return of Industrial Policy",
+      "authors": [
+        "Daniel Bos",
+        "Arya Golkhandan"
+      ],
+      "year": 2024,
+      "date": "2024",
+      "publicationTitle": "Handbook of AI Governance",
+      "publisher": "Example University Press",
+      "volume": null,
+      "issue": null,
+      "pages": "88-109",
+      "doi": null,
+      "url": null,
+      "abstract": "Fixture book chapter for testing publication entries without external links.",
+      "zoteroUrl": null,
+      "citation": null,
+      "updatedAt": "2026-07-09"
+    }
+  ]
+}

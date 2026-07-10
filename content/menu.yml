@@ -1,10 +1,12 @@
 menu:
+  - name: Projects
+    link: /projects
   - name: About
     link: /about
   - name: Members
     link: /members
   - name: News
-    link: /news
+    link: /#news
   - name: Publications
     link: /publications
   - name: Blog

@@ -1,0 +1,33 @@
+{
+  "name": "ai-infrastructure-lab.org",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "predev": "node scripts/generate-icons.mjs",
+    "dev": "nuxt dev --port 3007",
+    "prebuild": "node scripts/generate-icons.mjs",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "sync:zotero": "node scripts/sync-zotero-publications.mjs",
+    "preview": "nuxt preview",
+    "icons": "node scripts/generate-icons.mjs"
+  },
+  "dependencies": {
+    "@nuxt/content": "3.15.0",
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/icon": "2.3.1",
+    "@nuxt/image": "2.0.0",
+    "@nuxtjs/seo": "5.3.1",
+    "@tailwindcss/vite": "4.3.2",
+    "@vueuse/core": "14.3.0",
+    "better-sqlite3": "12.11.1",
+    "nuxt": "4.4.8",
+    "tailwindcss": "4.3.2"
+  },
+  "devDependencies": {
+    "@takumi-rs/core": "2.0.0-beta.14",
+    "sharp": "0.34.5",
+    "typescript": "latest"
+  }
+}

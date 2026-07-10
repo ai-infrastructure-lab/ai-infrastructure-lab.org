@@ -1,3 +1,5 @@
-# Publications 
+---
+title: Publications
+---
 
 [insert Zotero plugin?]

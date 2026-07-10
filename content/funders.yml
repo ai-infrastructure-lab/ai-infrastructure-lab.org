@@ -3,4 +3,6 @@ items:
     title: "Dutch Research Council"
     source: Dutch Research Council
     image: images/funder-nwo.png
+    imageDark: images/funder-nwo-dark.png
+    imageLight: images/funder-nwo-light.png
     date: 01-08-2026

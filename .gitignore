@@ -1,1 +1,9 @@
 .DS_Store
+node_modules
+.nuxt
+.output
+dist
+.data
+public/.icon-source.hash
+.playwright-mcp/
+*.mcp.log
