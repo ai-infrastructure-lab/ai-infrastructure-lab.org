@@ -11,7 +11,7 @@ This project compares how governments, universities, and public institutions def
 We study how these ambitions become infrastructure. A sovereignty strategy is not only a document or funding programme. It is expressed through contracts, facilities, standards, procurement rules, research partnerships, energy systems, and institutional capabilities. The project follows those material choices to understand what forms of autonomy are actually being built.
 
 <figure>
-  <img src="/images/servers3.png" alt="Dense computing infrastructure with cables and server hardware">
+  <img src="/images/servers3-web.webp" alt="Dense computing infrastructure with cables and server hardware">
   <figcaption>Sovereign AI infrastructure depends on practical control over facilities, procurement, data flows, standards, and technical expertise, not only national strategy documents.</figcaption>
 </figure>
 

@@ -11,7 +11,7 @@ This project studies where AI compute is built, how those locations are selected
 The geography of AI compute is becoming a central question for public institutions, research organisations, and policymakers. Training and serving advanced models depends on specialised facilities, high-capacity power connections, fibre routes, cooling systems, chip availability, and long-term procurement contracts. These requirements concentrate capability in some places while leaving others dependent on remote infrastructure and commercial access terms.
 
 <figure>
-  <img src="/images/servers.png" alt="Rows of server racks in a data centre corridor">
+  <img src="/images/servers-web.webp" alt="Rows of server racks in a data centre corridor">
   <figcaption>AI compute appears immaterial to users, but its practical capacity depends on physical facilities, power delivery, cooling, maintenance labour, and regional network access.</figcaption>
 </figure>
 

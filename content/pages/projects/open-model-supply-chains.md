@@ -11,7 +11,7 @@ This project examines what has to be in place for open AI systems to be produced
 Open-weight and open-source AI systems rely on datasets, training code, evaluation pipelines, model documentation, hosting infrastructure, developer communities, safety practices, and long-term maintenance. Some of these elements are visible in repositories and model cards. Others are distributed across organisations, labour arrangements, funding sources, compute access, and informal norms.
 
 <figure>
-  <img src="/images/servers2.png" alt="Server infrastructure used for computational workloads">
+  <img src="/images/servers2-web.webp" alt="Server infrastructure used for computational workloads">
   <figcaption>Open models still depend on scarce infrastructure: compute clusters, storage, evaluation environments, and hosting systems that shape who can build and reuse them.</figcaption>
 </figure>
 
