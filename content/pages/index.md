@@ -1,12 +1,12 @@
 ---
 title: The AI Infrastructure lab
-description: "researching the societal and economic implications of emerging AI technologies from silicon to bit."
+description: "researching the societal and economic implications of emerging AI technologies in real life, from silicon to bit."
 ---
 
 
 ::landing
 ---
-subtitle: "AI technologies proliferate not only digital but also physical space, transforming industries, cityscapes, and energy ecosystems. The AI Infrastructure Lab (AIIL) maps these digital and physical infrastructures, assessing how AI technologies reshape social and economic behaviour, and informs academic and public debate surrounding AI technologies from silicon to bit."
+subtitle: "AI technologies proliferate not only digital but also physical space, transforming the way people work, cities are built, and data flows. The AI Infrastructure Lab (AIIL) is a living lab that maps digital and physical infrastructures of AI, assesses how these technologies shape social and economic behaviour, and informs debate surrounding AI from silicon to bit."
 notes: Hosted at the [Centre of Language and Speech Technology (CLST), Radboud University, The Netherlands](https://www.ru.nl/en/cls/clst){:target="_blank"}.
 ---
 ::
