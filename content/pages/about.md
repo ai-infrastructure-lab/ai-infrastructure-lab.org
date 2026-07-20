@@ -17,3 +17,6 @@ Rigorously evaluating the technical, societal, and ecological footprints of new 
 
 ## Digital Sovereignty
 Developing frameworks and rethinking how technological advancement can align with sustainable, localized control over critical infrastructure and sovereign data to empower organizations and policymakers.
+
+
+# Advisory Board
