@@ -1,15 +1,16 @@
 menu:
+  - name: People
+    link: /people
   - name: Projects
     link: /projects
-  - name: About
-    link: /about
-  - name: Members
-    link: /members
   - name: News
     link: /#news
   - name: Publications
     link: /publications
   - name: Blog
     link: /blog
-  - name: Data walks
-    link: /datawalks
+  - name: AI walks
+    link: /aiwalks
+ - name: About
+    link: /about
+ 
