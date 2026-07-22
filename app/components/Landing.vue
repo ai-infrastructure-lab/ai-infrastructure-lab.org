@@ -15,6 +15,24 @@ const heroMaskStyle = computed(() => ({
   "--hero-mask-y": heroMaskY.value,
 }));
 
+const renderInlineMarkdown = (value?: string) => {
+  if (!value) return "";
+
+  const escaped = value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+
+  return escaped.replace(
+    /\[([^\]]+)\]\(([^)]+)\)(?:\{[^}]*target="_blank"[^}]*\})?/g,
+    (_match, label: string, href: string) =>
+      `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`,
+  );
+};
+
+const subtitleHtml = computed(() => renderInlineMarkdown(props.subtitle));
+const notesHtml = computed(() => renderInlineMarkdown(props.notes));
+
 const updateHeroMask = (event: PointerEvent) => {
   if (event.pointerType && event.pointerType !== "mouse") return;
 
@@ -51,19 +69,15 @@ const updateHeroMask = (event: PointerEvent) => {
         <div class="landing-hero__small landing-hero__small--lab"><span>Lab</span></div>
       </h1>
 
-      <MDC
+      <p
         v-if="subtitle"
-        :value="subtitle"
-        tag="p"
-        unwrap="p"
         class="mt-12 max-w-4xl text-[clamp(1.35rem,2.15vw,2.2rem)] font-light leading-[1.18] tracking-normal text-fg"
+        v-html="subtitleHtml"
       />
-      <MDC
+      <div
         v-if="notes"
-        :value="notes"
-        tag="div"
-        unwrap="p"
         class="mt-8 max-w-3xl text-sm leading-6 text-fg2"
+        v-html="notesHtml"
       />
       <div v-else class="mt-8 max-w-3xl text-base leading-8 text-fg2">
         <slot />
