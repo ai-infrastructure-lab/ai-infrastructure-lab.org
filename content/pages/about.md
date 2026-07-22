@@ -1,5 +1,5 @@
 ---
-title: About the AI Infrastructure Lab
+title: The AI Infrastructure Lab
 ---
 
 Our work combines three strands: AI industry research, AI technology assessment, and digital sovereignty. By tracking developments in the AI industry sector and evaluating the technical, societal and ecological footprint of new systems, we aim to understand the real-world impact of AI technologies on the way we live and work together. We build on these insights to contribute to debates on digital sovereignty, rethinking how technological advancement can align with sustainable, localized control over critical infrastructure and sovereign data.
