@@ -1,4 +1,5 @@
 - fix author
 - edit favicon
 - edit hover effect to start around text border
-- make logo link to about page 
+- make logo link to about page
+- aiwalks instead of AI Walks in browser bar
