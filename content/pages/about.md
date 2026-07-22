@@ -6,7 +6,7 @@ Our work combines three strands: AI industry research, AI technology assessment,
 
 It is hosted at the [Centre of Language and Speech Technology, Radboud University, The Netherlands](https://www.ru.nl/en/cls/clst).
 
-#Research
+# What we do
 The lab investigates software and hardware ecosystems that power artificial intelligence, mapping out their societal and economic implications. 
 
 ## AI Industry Research
