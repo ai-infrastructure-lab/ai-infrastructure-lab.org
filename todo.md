@@ -1,2 +1,3 @@
 - fix author
 - edit favicon
+- edit hover effect to start around text border
