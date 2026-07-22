@@ -1,6 +1,6 @@
 Files used for [ai infrastructure lab website](https://www.ai-infrastructure-lab.org).
 
-## Zotero publications
+## Syncing Zotero library
 
 Publications are synced from a Zotero collection into `content/publications.json`
 at build time.
