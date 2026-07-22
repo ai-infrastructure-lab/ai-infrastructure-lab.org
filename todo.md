@@ -3,3 +3,4 @@
 - edit hover effect to start around text border
 - make logo link to about page
 - aiwalks instead of AI Walks in browser bar
+- ai walk description link messed up..
