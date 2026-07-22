@@ -196,10 +196,10 @@
     opacity: 0;
     background-image:
       linear-gradient(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.08)),
-      url("/images/servers-web.webp");
+      url("/images/infinite-hyperscaler-web.webp");
     background-position:
       center,
-      center;
+      center 15%;
     background-repeat: no-repeat;
     background-size:
       cover,
