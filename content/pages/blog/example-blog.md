@@ -2,7 +2,7 @@
 title: Possible roles for academia in open-source AI
 description: In which we speculate on possible roles academia could serve in the open-source AI ecosystem
 date: 2025-05-26
-author: 
+author: Andreas Liesenfeld
 status: published
 ---
 # Possible roles for academia in open-source AI
