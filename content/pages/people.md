@@ -1,5 +1,5 @@
 
-# Members
+# People
 
 ::person{image="/images/headshot-al.jpg" name="Andreas Liesenfeld"}
 __[Andreas Liesenfeld](https://www.ru.nl/personen/liesenfeld-a "Andreas Liesenfeld")__ directs the AIIF lab and is co-founder of the index and Assistant Professor at Radboud University where he researches the societal and regulatory implications of emerging AI technologies. His work focuses on technology assessment, open source generative AI, and AI industry research. At the Centre for Language and Speech Technology (CLST), Andreas Liesenfeld is a member of the language technology expertise group and, in collaboration with the Netherlands eScience center, develops open source research software for natural language processing.
