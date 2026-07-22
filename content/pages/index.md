@@ -18,7 +18,7 @@ notes: Hosted at the [Centre of Language and Speech Technology (CLST), Radboud U
 
 :publications
 
-:datawalks
+:aiwalks
 
 :blog
 
