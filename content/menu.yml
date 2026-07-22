@@ -11,6 +11,5 @@ menu:
     link: /blog
   - name: AI walks
     link: /aiwalks
- - name: About
+  - name: About
     link: /about
- 

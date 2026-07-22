@@ -3,5 +3,5 @@ defineProps<{ author?: string }>()
 </script>
 
 <template>
-  <p v-if="author" class="!my-2 text-sm font-bold uppercase tracking-wider text-hi">{{ author }}</p>
+  <p v-if="author" class="!my-1 text-xs font-normal normal-case tracking-normal text-fg2">{{ author }}</p>
 </template>

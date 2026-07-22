@@ -1,13 +1,41 @@
 <script setup lang="ts">
+type MenuLink = {
+  name: string;
+  link: string;
+};
+
 const route = useRoute();
 const isMenuOpen = ref(false);
-const links = [
+
+const fallbackLinks: MenuLink[] = [
   { name: "Projects", link: "/projects" },
-  { name: "Data walks", link: "/datawalks" },
   { name: "Publications", link: "/publications" },
   { name: "Blog", link: "/blog" },
   { name: "About", link: "/about" },
 ];
+
+const { data } = await useAsyncData("menu", () =>
+  queryCollection("siteData").where("stem", "=", "menu").first(),
+);
+
+const links = computed<MenuLink[]>(() => {
+  const document = data.value as
+    | { menu?: MenuLink[]; meta?: { menu?: MenuLink[] } }
+    | null;
+  const menu = document?.meta?.menu || document?.menu || [];
+
+  return menu.length ? menu : fallbackLinks;
+});
+
+const isActiveLink = (link: string) => {
+  const [path] = link.split("#");
+
+  if (link.includes("#")) {
+    return route.fullPath === link;
+  }
+
+  return route.path === path || route.path.startsWith(`${path}/`);
+};
 
 watch(
   () => route.fullPath,
@@ -61,14 +89,9 @@ watch(
         :to="link.link"
         class="hidden shrink-0 font-mono text-2xl font-light leading-none text-fg no-underline transition hover:text-hi hover:underline lg:block"
         :class="{
-          underline:
-            route.path === link.link || route.path.startsWith(`${link.link}/`),
+          underline: isActiveLink(link.link),
         }"
-        :aria-current="
-          route.path === link.link || route.path.startsWith(`${link.link}/`)
-            ? 'page'
-            : undefined
-        "
+        :aria-current="isActiveLink(link.link) ? 'page' : undefined"
       >
         {{ link.name }}
       </NuxtLink>
@@ -92,15 +115,9 @@ watch(
           :to="link.link"
           class="font-mono text-2xl font-light leading-none text-fg no-underline transition hover:text-hi hover:underline"
           :class="{
-            'text-hi':
-              route.path === link.link ||
-              route.path.startsWith(`${link.link}/`),
+            'text-hi': isActiveLink(link.link),
           }"
-          :aria-current="
-            route.path === link.link || route.path.startsWith(`${link.link}/`)
-              ? 'page'
-              : undefined
-          "
+          :aria-current="isActiveLink(link.link) ? 'page' : undefined"
         >
           {{ link.name }}
         </NuxtLink>

@@ -1,31 +1,5 @@
-Files used for [ai infrastructure lab website](https://www.ai-infrastructure-lab.org).
+# The AI Infrastructure Lab website
 
-## Syncing Zotero library
+This repository contains the website for [The AI Infrastructure Lab](https://www.ai-infrastructure-lab.org), a research lab hosted at the Centre of Language and Speech Technology (CLST), Radboud University, The Netherlands.
 
-Publications are synced from a Zotero collection into `content/publications.json`
-at build time.
-
-Required GitHub repository secrets:
-
-- `ZOTERO_LIBRARY_ID`: Zotero user ID or group ID.
-- `ZOTERO_COLLECTION_KEY`: Collection key from the Zotero collection URL.
-
-Optional GitHub repository secrets/variables:
-
-- `ZOTERO_API_KEY`: Required for private libraries; optional for public libraries.
-- `ZOTERO_LIBRARY_TYPE`: Set as a repository variable to `group` for group
-  libraries. Defaults to `user`.
-- `ZOTERO_CITATION_STYLE`: Set as a repository variable for another CSL style.
-  Defaults to `apa`.
-
-Run the sync locally with:
-
-```sh
-ZOTERO_LIBRARY_ID=... ZOTERO_COLLECTION_KEY=... pnpm sync:zotero
-```
-
-For a group library:
-
-```sh
-ZOTERO_LIBRARY_TYPE=group ZOTERO_LIBRARY_ID=... ZOTERO_COLLECTION_KEY=... pnpm sync:zotero
-```
+The lab studies the societal, economic, technical, and ecological implications of emerging AI technologies. Its work focuses on the infrastructure behind AI systems: compute, data centres, chips, cloud regions, open model ecosystems, software supply chains, institutional procurement, and digital sovereignty.

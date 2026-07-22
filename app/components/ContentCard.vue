@@ -8,11 +8,11 @@ defineProps<{
     author?: string;
   };
   variant?: "card" | "list";
-  section?: "news" | "blog" | "datawalks" | "projects";
+  section?: "news" | "blog" | "aiwalks" | "projects";
 }>();
 
-const formatSection = (section?: "news" | "blog" | "datawalks" | "projects") => {
-  if (section === "datawalks") return "Data walk";
+const formatSection = (section?: "news" | "blog" | "aiwalks" | "projects") => {
+  if (section === "aiwalks") return "AI walk";
   if (section === "projects") return "Project";
   if (section === "news") return "News";
   if (section === "blog") return "Blog";
@@ -44,7 +44,7 @@ const formatDateStamp = (date?: string | Date) => {
 
 <template>
   <NuxtLink
-    v-if="variant === 'card' && section === 'datawalks'"
+    v-if="variant === 'card' && section === 'aiwalks'"
     :to="item.path"
     class="glow-card group relative min-h-80 overflow-hidden rounded-md border border-fg/10 bg-bg2 p-5 tracking-normal text-fg no-underline transition"
   >

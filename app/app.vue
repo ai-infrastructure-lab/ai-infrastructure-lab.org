@@ -59,7 +59,6 @@ useSeoMeta({
 
 <template>
   <div class="min-h-screen overflow-x-clip bg-bg text-fg">
-    <AmbientBackground />
     <SiteHeader />
     <main :key="route.fullPath" class="relative z-10 mx-auto w-full max-w-[104rem] px-5 pb-24 pt-28 sm:px-8 lg:px-12">
       <NuxtPage />

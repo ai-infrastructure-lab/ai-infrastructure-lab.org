@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { data: items } = await useAsyncData("datawalks-list", () =>
+const { data: items } = await useAsyncData("aiwalks-list", () =>
   queryCollection("pages")
-    .where("path", "LIKE", "/datawalks/%")
+    .where("path", "LIKE", "/aiwalks/%")
     .where("status", "=", "published")
     .order("date", "DESC")
     .limit(3)
@@ -187,7 +187,7 @@ const getDiscPath = (cx: number, cy: number, radius: number) =>
 </script>
 
 <template>
-  <ContentSection title="Data walks" to="/datawalks" content-class="grid gap-4">
+  <ContentSection title="AI walks" to="/aiwalks" content-class="grid gap-4">
     <NuxtLink
       v-for="(item, index) in items"
       :key="item.path"

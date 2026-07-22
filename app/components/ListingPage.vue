@@ -2,7 +2,7 @@
 const props = defineProps<{
   title: string
   description: string
-  section: 'news' | 'blog' | 'datawalks' | 'projects'
+  section: 'news' | 'blog' | 'aiwalks' | 'projects'
 }>()
 
 const { data: items } = await useAsyncData(`listing:${props.section}`, () =>
@@ -16,7 +16,7 @@ const { data: items } = await useAsyncData(`listing:${props.section}`, () =>
 const listingGridClass = computed(() => {
   if (props.section === 'projects') return 'grid gap-12 md:grid-cols-2'
   if (props.section === 'blog') return 'grid gap-12 md:grid-cols-3'
-  if (props.section === 'datawalks') return 'grid gap-4'
+  if (props.section === 'aiwalks') return 'grid gap-4'
   return 'grid gap-3'
 })
 

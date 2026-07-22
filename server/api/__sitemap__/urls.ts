@@ -1,6 +1,6 @@
 export default defineSitemapEventHandler(async (event) => {
   const pages = await queryCollection(event, 'pages').all()
-  const generatedPages = ['/projects', '/blog', '/datawalks']
+  const generatedPages = ['/projects', '/blog', '/aiwalks']
 
   return [
     ...generatedPages.map((loc) => ({ loc })),

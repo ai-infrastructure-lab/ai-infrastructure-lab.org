@@ -26,7 +26,7 @@ useSeoMeta({
 const section = computed(() => {
   const [, firstSegment] = path.value.split('/')
 
-  if (firstSegment === 'datawalks') return 'Data walk'
+  if (firstSegment === 'aiwalks') return 'AI walk'
   if (firstSegment === 'projects') return 'Project'
   if (firstSegment === 'blog') return 'Blog'
   if (firstSegment) return firstSegment
@@ -44,7 +44,7 @@ const formattedDate = computed(() => {
 })
 
 const showHeroDescription = computed(() => path.value !== '/about' && page.value?.description)
-const showSectionLabel = computed(() => !['/about', '/publications'].includes(path.value))
+const showSectionLabel = computed(() => !['/about', '/people', '/publications'].includes(path.value))
 </script>
 
 <template>
@@ -69,10 +69,13 @@ const showSectionLabel = computed(() => !['/about', '/publications'].includes(pa
       </div>
     </header>
 
-    <div v-if="formattedDate" class="pt-1 text-center text-xs tracking-normal text-fg2">
-      <time :datetime="new Date(page.date).toISOString()">
+    <div v-if="formattedDate || page.author" class="pt-1 text-center text-xs tracking-normal text-fg2">
+      <time v-if="formattedDate" :datetime="new Date(page.date).toISOString()">
         {{ formattedDate }}
       </time>
+      <p v-if="page.author" class="mt-1 text-xs font-normal normal-case tracking-normal text-fg2">
+        {{ page.author }}
+      </p>
     </div>
 
     <div class="prose-lab prose-lab--article mt-4">

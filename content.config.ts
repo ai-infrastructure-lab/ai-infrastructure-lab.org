@@ -23,7 +23,7 @@ export default defineContentConfig({
     }),
     siteData: defineCollection({
       type: 'data',
-      source: '*.{yml,yaml,json}'
+      source: '**/*.{yml,yaml,json}'
     })
   }
 })
