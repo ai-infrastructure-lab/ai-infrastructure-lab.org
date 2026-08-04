@@ -124,10 +124,10 @@ watch(
 <template>
   <header class="relative z-50">
     <section
-      class="mx-auto flex w-full max-w-[104rem] items-center gap-x-3 px-5 pb-1 pt-2 sm:px-8 lg:block lg:px-12"
+      class="mx-auto flex w-full max-w-[104rem] items-center gap-x-3 px-5 pb-1 pt-2 sm:pt-4 sm:px-8 lg:block lg:px-12"
     >
       <button
-        class="group flex size-11 shrink-0 -scale-x-100 flex-col items-end justify-center gap-1.5 text-fg transition hover:text-hi lg:hidden"
+        class="site-menu-toggle group flex size-10 shrink-0 -scale-x-100 flex-col items-end justify-center gap-2 text-fg translate-y-[0.22rem] transition hover:text-hi lg:hidden"
         type="button"
         :aria-expanded="isMenuOpen"
         aria-controls="mobile-navigation"
@@ -135,16 +135,16 @@ watch(
         @click="isMenuOpen = !isMenuOpen"
       >
         <span
-          class="h-px w-7 bg-current transition"
-          :class="{ 'translate-y-[7px] rotate-45': isMenuOpen }"
+          class="h-0.5 w-8 bg-current transition"
+          :class="{ 'translate-y-[10px] rotate-45': isMenuOpen }"
         />
         <span
-          class="h-px w-5 bg-current transition"
+          class="h-0.5 w-6 bg-current transition"
           :class="{ 'opacity-0': isMenuOpen }"
         />
         <span
-          class="h-px w-7 bg-current transition"
-          :class="{ '-translate-y-[7px] -rotate-45': isMenuOpen }"
+          class="h-0.5 w-8 bg-current transition"
+          :class="{ '-translate-y-[10px] -rotate-45': isMenuOpen }"
         />
       </button>
       <component
@@ -161,11 +161,7 @@ watch(
             class="landing-hero__graphic-frame"
             :style="heroMaskStyle"
           >
-            <img
-              class="landing-hero__graphic-base"
-              src="/AI-header.svg"
-              alt=""
-            />
+            <span class="landing-hero__graphic-base" aria-hidden="true" />
             <span
               class="landing-hero__graphic-reveal"
               :class="{
@@ -187,7 +183,7 @@ watch(
   </header>
 
   <nav
-    class="sticky top-0 z-50 mx-auto hidden h-16 xl:-mt-6 w-full max-w-[104rem] items-center justify-start gap-x-3 overflow-x-auto bg-bg/0 scroll-up:bg-bg/0 px-5 backdrop-blur-md transition duration-300 sm:px-8 lg:flex lg:gap-x-12 lg:px-12"
+    class="sticky top-0 z-50 mx-auto hidden h-16 lg:-mt-6 w-full max-w-[104rem] items-center justify-start gap-x-3 overflow-x-auto bg-bg/0 scroll-up:bg-bg/0 px-5 xl:backdrop-blur-md transition duration-300 sm:px-8 lg:flex md:gap-x-12 lg:px-12"
     aria-label="Main navigation"
   >
     <NuxtLink
