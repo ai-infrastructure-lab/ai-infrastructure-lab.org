@@ -51,7 +51,7 @@ watch(
 
 useSeoMeta({
   titleTemplate: (title) =>
-    title
+    title && title.trim().toLowerCase() !== "the ai infrastructure lab"
       ? `${title} | The AI Infrastructure Lab`
       : "The AI Infrastructure Lab",
   ogSiteName: "The AI Infrastructure Lab",
