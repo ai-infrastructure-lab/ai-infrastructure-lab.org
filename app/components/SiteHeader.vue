@@ -46,6 +46,11 @@ const { data } = await useAsyncData("menu", () =>
 const { data: headerImagesData } = await useAsyncData("header-images", () =>
   queryCollection("siteData").where("stem", "=", "header-images").first(),
 );
+const { data: currentPage } = await useAsyncData(
+  "header-current-page",
+  () => queryCollection("pages").path(route.path).first(),
+  { watch: [() => route.path] },
+);
 
 const links = computed<MenuLink[]>(() => {
   const document = data.value as {
@@ -72,6 +77,23 @@ const rotateHeaderImage = () => {
   activeHeaderImageIndex.value =
     (activeHeaderImageIndex.value + 1) % headerImages.value.length;
 };
+
+const collapsedMenuTitle = computed(() => {
+  if (route.path === "/") return "";
+
+  const document = currentPage.value as { title?: string } | null;
+  if (document?.title) return document.title;
+
+  const [segment] = route.path.split("/").filter(Boolean);
+  const titles: Record<string, string> = {
+    aiwalks: "AI walks",
+    blog: "Blog",
+    projects: "Projects",
+    publications: "Publications",
+  };
+
+  return titles[segment] || segment || "";
+});
 
 const isActiveLink = (link: string) => {
   const [path] = link.split("#");
@@ -126,30 +148,32 @@ watch(
     <section
       class="mx-auto flex w-full max-w-[104rem] items-center gap-x-3 px-5 pb-1 pt-2 sm:pt-4 sm:px-8 lg:block lg:px-12"
     >
-      <button
-        class="site-menu-toggle group flex size-10 shrink-0 -scale-x-100 flex-col items-end justify-center gap-2 text-fg translate-y-[0.22rem] transition hover:text-hi lg:hidden"
-        type="button"
-        :aria-expanded="isMenuOpen"
-        aria-controls="mobile-navigation"
-        aria-label="Toggle navigation"
-        @click="isMenuOpen = !isMenuOpen"
-      >
-        <span
-          class="h-0.5 w-8 bg-current transition"
-          :class="{ 'translate-y-[10px] rotate-45': isMenuOpen }"
-        />
-        <span
-          class="h-0.5 w-6 bg-current transition"
-          :class="{ 'opacity-0': isMenuOpen }"
-        />
-        <span
-          class="h-0.5 w-8 bg-current transition"
-          :class="{ '-translate-y-[10px] -rotate-45': isMenuOpen }"
-        />
-      </button>
+      <div class="relative shrink-0 self-center lg:hidden">
+        <button
+          class="site-menu-toggle group flex size-10 -scale-x-100 flex-col items-end justify-center gap-2 text-fg translate-y-[0.22rem] transition hover:text-hi"
+          type="button"
+          :aria-expanded="isMenuOpen"
+          aria-controls="mobile-navigation"
+          aria-label="Toggle navigation"
+          @click="isMenuOpen = !isMenuOpen"
+        >
+          <span
+            class="h-0.5 w-8 bg-current transition"
+            :class="{ 'translate-y-[10px] rotate-45': isMenuOpen }"
+          />
+          <span
+            class="h-0.5 w-6 bg-current transition"
+            :class="{ 'opacity-0': isMenuOpen }"
+          />
+          <span
+            class="h-0.5 w-8 bg-current transition"
+            :class="{ '-translate-y-[10px] -rotate-45': isMenuOpen }"
+          />
+        </button>
+      </div>
       <component
         :is="isHomePage ? 'h1' : 'div'"
-        class="landing-hero landing-hero--menu min-w-0 flex-1 w-full! max-w-full!"
+        class="landing-hero landing-hero--menu relative min-w-0 flex-1 w-full! max-w-full!"
       >
         <NuxtLink
           to="/"
@@ -178,6 +202,12 @@ watch(
             </span>
           </span>
         </NuxtLink>
+        <span
+          v-if="collapsedMenuTitle"
+          class="pointer-events-none absolute left-0 top-full mt-0.5 font-mono text-[0.625rem] font-normal leading-none tracking-wide text-fg2 lg:hidden"
+        >
+          {{ collapsedMenuTitle }}
+        </span>
       </component>
     </section>
   </header>
