@@ -17,7 +17,6 @@ useSeoMeta({
       </h1>
       <div class="mx-auto mt-8 max-w-2xl lg:mt-12">
         <p class="text-lg font-light leading-8 tracking-normal text-fg2">
-          Research outputs synced from the lab Zotero collection at build time.
         </p>
       </div>
     </header>
