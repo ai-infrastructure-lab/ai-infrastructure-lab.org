@@ -4,6 +4,20 @@ type MenuLink = {
   link: string;
 };
 
+type HeaderImage = {
+  src: string;
+  alt: string;
+};
+
+const fallbackHeaderImages: HeaderImage[] = [
+  {
+    src: "/images/infinite-hyperscaler-cyan-low-angle2.webp",
+    alt: "Hyperscale data infrastructure",
+  },
+  { src: "/images/infra2.webp", alt: "Offshore wind farm" },
+  { src: "/images/infra3.webp", alt: "Rare-earth processing mine" },
+];
+
 const route = useRoute();
 const isMenuOpen = ref(false);
 const heroGraphic = ref<HTMLElement | null>(null);
@@ -11,6 +25,8 @@ const heroMaskX = ref("50%");
 const heroMaskY = ref("50%");
 const isHeroMaskActive = ref(false);
 const isHomePage = computed(() => route.path === "/");
+const activeHeaderImageIndex = ref(0);
+let headerImageRotation: ReturnType<typeof setInterval> | undefined;
 
 const heroMaskStyle = computed(() => ({
   "--hero-mask-x": heroMaskX.value,
@@ -27,6 +43,9 @@ const fallbackLinks: MenuLink[] = [
 const { data } = await useAsyncData("menu", () =>
   queryCollection("siteData").where("stem", "=", "menu").first(),
 );
+const { data: headerImagesData } = await useAsyncData("header-images", () =>
+  queryCollection("siteData").where("stem", "=", "header-images").first(),
+);
 
 const links = computed<MenuLink[]>(() => {
   const document = data.value as {
@@ -37,6 +56,22 @@ const links = computed<MenuLink[]>(() => {
 
   return menu.length ? menu : fallbackLinks;
 });
+
+const headerImages = computed<HeaderImage[]>(() => {
+  const document = headerImagesData.value as { images?: HeaderImage[] } | null;
+
+  return document?.images?.length ? document.images : fallbackHeaderImages;
+});
+
+const activeHeaderImage = computed(
+  () =>
+    headerImages.value[activeHeaderImageIndex.value] || headerImages.value[0],
+);
+
+const rotateHeaderImage = () => {
+  activeHeaderImageIndex.value =
+    (activeHeaderImageIndex.value + 1) % headerImages.value.length;
+};
 
 const isActiveLink = (link: string) => {
   const [path] = link.split("#");
@@ -60,8 +95,23 @@ const updateHeroMask = (event: PointerEvent) => {
   isHeroMaskActive.value = true;
 };
 
-onMounted(() => window.addEventListener("pointermove", updateHeroMask));
-onUnmounted(() => window.removeEventListener("pointermove", updateHeroMask));
+onMounted(() => {
+  window.addEventListener("pointermove", updateHeroMask);
+  headerImageRotation = window.setInterval(rotateHeaderImage, 10_000);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("pointermove", updateHeroMask);
+  if (headerImageRotation) window.clearInterval(headerImageRotation);
+});
+
+watch(
+  headerImages,
+  (images) => {
+    activeHeaderImageIndex.value %= images.length;
+  },
+  { immediate: true },
+);
 
 watch(
   () => route.fullPath,
@@ -123,7 +173,12 @@ watch(
               }"
               aria-hidden="true"
             >
-              <span class="landing-hero__graphic-image" />
+              <img
+                :key="activeHeaderImage.src"
+                class="landing-hero__graphic-image"
+                :src="activeHeaderImage.src"
+                alt=""
+              />
             </span>
           </span>
         </NuxtLink>

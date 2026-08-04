@@ -1,31 +1,18 @@
 <script setup lang="ts">
+import { renderInlineMarkdown } from "~/utils/renderInlineMarkdown";
+
 const props = defineProps<{
   title?: string;
   subtitle?: string;
   notes?: string;
 }>();
 
-const renderInlineMarkdown = (value?: string) => {
-  if (!value) return "";
-
-  const escaped = value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
-
-  return escaped.replace(
-    /\[([^\]]+)\]\(([^)]+)\)(?:\{[^}]*target="_blank"[^}]*\})?/g,
-    (_match, label: string, href: string) =>
-      `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`,
-  );
-};
-
 const subtitleHtml = computed(() => renderInlineMarkdown(props.subtitle));
 const notesHtml = computed(() => renderInlineMarkdown(props.notes));
 </script>
 
 <template>
-  <section class="flex min-h-[60svh] flex-col justify-end pb-20 pt-24">
+  <section class="flex min-h-[60svh] flex-col justify-end pb-8 pt-24">
     <div class="">
       <p
         v-if="subtitle"
