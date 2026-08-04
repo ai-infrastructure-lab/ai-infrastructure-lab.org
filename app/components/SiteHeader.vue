@@ -6,6 +6,16 @@ type MenuLink = {
 
 const route = useRoute();
 const isMenuOpen = ref(false);
+const heroGraphic = ref<HTMLElement | null>(null);
+const heroMaskX = ref("50%");
+const heroMaskY = ref("50%");
+const isHeroMaskActive = ref(false);
+const isHomePage = computed(() => route.path === "/");
+
+const heroMaskStyle = computed(() => ({
+  "--hero-mask-x": heroMaskX.value,
+  "--hero-mask-y": heroMaskY.value,
+}));
 
 const fallbackLinks: MenuLink[] = [
   { name: "Projects", link: "/projects" },
@@ -19,9 +29,10 @@ const { data } = await useAsyncData("menu", () =>
 );
 
 const links = computed<MenuLink[]>(() => {
-  const document = data.value as
-    | { menu?: MenuLink[]; meta?: { menu?: MenuLink[] } }
-    | null;
+  const document = data.value as {
+    menu?: MenuLink[];
+    meta?: { menu?: MenuLink[] };
+  } | null;
   const menu = document?.meta?.menu || document?.menu || [];
 
   return menu.length ? menu : fallbackLinks;
@@ -37,6 +48,21 @@ const isActiveLink = (link: string) => {
   return route.path === path || route.path.startsWith(`${path}/`);
 };
 
+const updateHeroMask = (event: PointerEvent) => {
+  if (event.pointerType && event.pointerType !== "mouse") return;
+
+  const element = heroGraphic.value;
+  if (!element) return;
+
+  const rect = element.getBoundingClientRect();
+  heroMaskX.value = `${event.clientX - rect.left}px`;
+  heroMaskY.value = `${event.clientY - rect.top}px`;
+  isHeroMaskActive.value = true;
+};
+
+onMounted(() => window.addEventListener("pointermove", updateHeroMask));
+onUnmounted(() => window.removeEventListener("pointermove", updateHeroMask));
+
 watch(
   () => route.fullPath,
   () => {
@@ -46,23 +72,12 @@ watch(
 </script>
 
 <template>
-  <header
-    class="fixed inset-x-0 top-0 z-50 transition duration-300 scroll-down:-translate-y-full scroll-up:translate-y-0 scrolled:bg-bg/80 scrolled:backdrop-blur-md"
-  >
-    <nav
-      class="mx-auto flex h-18 w-full max-w-[104rem] items-center justify-end gap-x-3 overflow-x-auto px-5 sm:px-8 lg:gap-x-7 lg:px-12"
-      aria-label="Main navigation"
+  <header class="relative z-50">
+    <section
+      class="mx-auto flex w-full max-w-[104rem] items-center gap-x-3 px-5 pb-1 pt-2 sm:px-8 lg:block lg:px-12"
     >
-      <NuxtLink
-        to="/"
-        class="font-mono text-2xl font-light leading-none text-fg shrink-0 hover:underline hover:text-hi"
-      >
-        AI Infrastructure Lab
-      </NuxtLink>
-      <div class="flex w-full"></div>
-
       <button
-        class="group flex size-11 shrink-0 flex-col items-end justify-center gap-1.5 text-fg transition hover:text-hi lg:hidden"
+        class="group flex size-11 shrink-0 -scale-x-100 flex-col items-end justify-center gap-1.5 text-fg transition hover:text-hi lg:hidden"
         type="button"
         :aria-expanded="isMenuOpen"
         aria-controls="mobile-navigation"
@@ -82,21 +97,57 @@ watch(
           :class="{ '-translate-y-[7px] -rotate-45': isMenuOpen }"
         />
       </button>
-
-      <NuxtLink
-        v-for="link in links"
-        :key="link.link"
-        :to="link.link"
-        class="hidden shrink-0 font-mono text-2xl font-light leading-none text-fg no-underline transition hover:text-hi hover:underline lg:block"
-        :class="{
-          underline: isActiveLink(link.link),
-        }"
-        :aria-current="isActiveLink(link.link) ? 'page' : undefined"
+      <component
+        :is="isHomePage ? 'h1' : 'div'"
+        class="landing-hero landing-hero--menu min-w-0 flex-1 w-full! max-w-full!"
       >
-        {{ link.name }}
-      </NuxtLink>
-    </nav>
+        <NuxtLink
+          to="/"
+          class="landing-hero__graphic"
+          aria-label="AI Infrastructure Lab home"
+        >
+          <span
+            ref="heroGraphic"
+            class="landing-hero__graphic-frame"
+            :style="heroMaskStyle"
+          >
+            <img
+              class="landing-hero__graphic-base"
+              src="/AI-header.svg"
+              alt=""
+            />
+            <span
+              class="landing-hero__graphic-reveal"
+              :class="{
+                'landing-hero__graphic-reveal--active': isHeroMaskActive,
+              }"
+              aria-hidden="true"
+            >
+              <span class="landing-hero__graphic-image" />
+            </span>
+          </span>
+        </NuxtLink>
+      </component>
+    </section>
   </header>
+
+  <nav
+    class="sticky top-0 z-50 mx-auto hidden h-16 xl:-mt-6 w-full max-w-[104rem] items-center justify-start gap-x-3 overflow-x-auto bg-bg/0 scroll-up:bg-bg/0 px-5 backdrop-blur-md transition duration-300 sm:px-8 lg:flex lg:gap-x-12 lg:px-12"
+    aria-label="Main navigation"
+  >
+    <NuxtLink
+      v-for="link in links"
+      :key="link.link"
+      :to="link.link"
+      class="hidden shrink-0 font-mono text-2xl font-light leading-none text-fg no-underline transition hover:text-hi hover:underline lg:block"
+      :class="{
+        underline: isActiveLink(link.link),
+      }"
+      :aria-current="isActiveLink(link.link) ? 'page' : undefined"
+    >
+      {{ link.name }}
+    </NuxtLink>
+  </nav>
 
   <Teleport to="body">
     <div

@@ -56,7 +56,7 @@
 
   html[data-theme="light"] {
     --color-bg: #f4f0e8;
-    --color-bg2: #E3DFD7;
+    --color-bg2: #e3dfd7;
     --color-fg: #17201d;
     --color-fg2: #5f6a64;
     --color-focus: #0f7a68;
@@ -95,6 +95,14 @@
 }
 
 @layer components {
+  .site-shell {
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg2) 0,
+      var(--color-bg) min(70rem, 100vh)
+    );
+  }
+
   .block-label {
     @apply font-mono text-xs! font-normal! tracking-widest! uppercase leading-none  text-fg2!;
   }
@@ -135,37 +143,16 @@
     margin-bottom: 12rem !important;
   }
 
-  .landing-hero__small {
+  .landing-hero--menu {
+    margin-bottom: 0 !important;
+  }
+
+  .landing-hero__graphic {
     display: block;
-    color: var(--color-fg);
-    font-size: 1rem;
-    font-weight:600;
-    letter-spacing: normal;
-    line-height: 1;
-    display: block;
-    text-align: center;
-    /*margin-bottom: -0.25rem;*/
     width: 100%;
-    display:flex;
-    align-items: center;
-    gap:0.5rem;
-    &::before, &::after {
-      content: "";
-      display: block;
-      height: 1px;
-      background: var(--color-fg);
-      flex:1;
-      opacity:0.3;
-    }
-    @media (max-width: 60rem) {
-      font-size: 0.7rem;
-    }
   }
 
-  .landing-hero__small--lab {
-  }
-
-  .landing-hero__infrastructure {
+  .landing-hero__graphic-frame {
     --hero-mask-x: 50%;
     --hero-mask-y: 50%;
     --hero-mask-size: clamp(4.5rem, 10vw, 10rem);
@@ -173,27 +160,39 @@
     position: relative;
     display: block;
     width: 100%;
-    overflow: hidden;
-    color: var(--color-fg);
-    cursor: crosshair;
-    font-size: clamp(2.05rem, 13.6vw, 15rem);
-    font-weight: 700;
-    letter-spacing: normal;
-    line-height: 0.78;
-    white-space: nowrap;
-    margin-bottom: 0.5vw;
+    aspect-ratio: 1332 / 177;
   }
 
-  .landing-hero__word-base,
-  .landing-hero__word-image {
+  .landing-hero__graphic-base {
     display: block;
+    width: 100%;
+    height: auto;
   }
 
-  .landing-hero__word-image {
+  .landing-hero__graphic-reveal {
     position: absolute;
     inset: 0;
-    color: transparent;
     opacity: 0;
+    -webkit-mask-image: radial-gradient(
+      circle at var(--hero-mask-x) var(--hero-mask-y),
+      #000 0 var(--hero-mask-size),
+      rgb(0 0 0 / 0.75) calc(var(--hero-mask-size) + 1.5rem),
+      rgb(0 0 0 / 0.25) calc(var(--hero-mask-size) + 4rem),
+      transparent calc(var(--hero-mask-size) + 8rem)
+    );
+    mask-image: radial-gradient(
+      circle at var(--hero-mask-x) var(--hero-mask-y),
+      #000 0 var(--hero-mask-size),
+      rgb(0 0 0 / 0.75) calc(var(--hero-mask-size) + 1.5rem),
+      rgb(0 0 0 / 0.25) calc(var(--hero-mask-size) + 4rem),
+      transparent calc(var(--hero-mask-size) + 8rem)
+    );
+    transition: opacity 180ms ease;
+  }
+
+  .landing-hero__graphic-image {
+    position: absolute;
+    inset: 0;
     background-image:
       linear-gradient(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.08)),
       url("/images/infinite-hyperscaler-web.webp");
@@ -201,36 +200,19 @@
       center,
       center 15%;
     background-repeat: no-repeat;
-    background-size:
-      cover,
-      cover;
-    -webkit-background-clip: text;
-    background-clip: text;
+    background-size: cover, cover;
     filter: saturate(1.08) contrast(1.1) brightness(1.18);
-    mask-image: radial-gradient(
-      circle at var(--hero-mask-x) var(--hero-mask-y),
-      #000 0 var(--hero-mask-size),
-      rgb(0 0 0 / 0.6) calc(var(--hero-mask-size) + 1.8rem),
-      transparent calc(var(--hero-mask-size) + 5rem)
-    );
-    -webkit-mask-image: radial-gradient(
-      circle at var(--hero-mask-x) var(--hero-mask-y),
-      #000 0 var(--hero-mask-size),
-      rgb(0 0 0 / 0.6) calc(var(--hero-mask-size) + 1.8rem),
-      transparent calc(var(--hero-mask-size) + 5rem)
-    );
-    transition: opacity 180ms ease;
+    -webkit-mask: url("/AI-header.svg") center / contain no-repeat;
+    mask: url("/AI-header.svg") center / contain no-repeat;
   }
 
-  .landing-hero__infrastructure--hovered .landing-hero__word-image {
+  .landing-hero__graphic-reveal--active {
     opacity: 1;
   }
 
   @media (pointer: coarse) {
-    .landing-hero__word-image {
-      opacity: 1;
-      mask-image: linear-gradient(#000, #000);
-      -webkit-mask-image: linear-gradient(#000, #000);
+    .landing-hero__graphic-reveal {
+      display: none;
     }
   }
 
@@ -354,7 +336,11 @@
   .prose-lab a {
     color: var(--color-fg);
     text-decoration-line: underline;
-    text-decoration-color: color-mix(in oklab, var(--color-fg) 35%, transparent);
+    text-decoration-color: color-mix(
+      in oklab,
+      var(--color-fg) 35%,
+      transparent
+    );
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.22em;
     transition: color 160ms ease;
