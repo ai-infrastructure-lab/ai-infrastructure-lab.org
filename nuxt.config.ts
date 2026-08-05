@@ -32,9 +32,9 @@ export default defineNuxtConfig({
   },
   site: {
     url: "https://ai-infrastructure-lab.org",
-    name: "The AI Infrastructure Lab",
+    name: "AI Infrastructure Lab",
     description:
-      "Academic lab dedicated to AI industry research, AI technology assessment and digital sovereignty. Hosted at Radboud University Nijmegen, The Netherlands.",
+      "Academic lab dedicated to AI industry research, AI technology assessment and research on digital sovereignty. Hosted at Radboud University Nijmegen, The Netherlands.",
     defaultLocale: "en",
   },
   app: {
