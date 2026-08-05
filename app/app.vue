@@ -54,7 +54,7 @@ useSeoMeta({
     title && title.trim().toLowerCase() !== "the ai infrastructure lab"
       ? `${title} | The AI Infrastructure Lab`
       : "The AI Infrastructure Lab",
-  ogSiteName: "The AI Infrastructure Lab",
+  ogSiteName: "AI Infrastructure Lab",
   ogType: "website",
   ogImage: "https://ai-infrastructure-lab.org/og-image.png",
   ogImageWidth: 1200,
