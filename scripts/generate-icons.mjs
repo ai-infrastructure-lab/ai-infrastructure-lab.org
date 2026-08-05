@@ -118,7 +118,7 @@ writeFileSync(
   join(publicDir, 'site.webmanifest'),
   JSON.stringify(
     {
-      name: 'The AI Infrastructure Lab',
+      name: 'AI Infrastructure Lab',
       short_name: 'AI Infrastructure Lab',
       start_url: '/',
       display: 'standalone',
