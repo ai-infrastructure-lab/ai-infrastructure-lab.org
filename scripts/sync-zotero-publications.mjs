@@ -1,7 +1,7 @@
 import { mkdir, rename, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
-const libraryType = process.env.ZOTERO_LIBRARY_TYPE || "user";
+const libraryType = process.env.ZOTERO_LIBRARY_TYPE || "group";
 const libraryId = process.env.ZOTERO_LIBRARY_ID || process.env.ZOTERO_USER_ID;
 const collectionKey = process.env.ZOTERO_COLLECTION_KEY;
 const apiKey = process.env.ZOTERO_API_KEY;
