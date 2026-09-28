@@ -10,4 +10,4 @@ Initiated by Andreas Liesenfeld and Mark Dingemanse in 2023, the European Open-S
 
 ## Read more
 
-  [<img src="/images/osai-index.png" alt="Explore the EU OSAI index">]([www.osai-index.eu/](https://))
+  [Link: European Open Source AI Index](www.osai-index.eu/)
