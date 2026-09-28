@@ -1,10 +1,9 @@
 ---
-title: "First AI infrastructure walk"
-description: AI walking in Karlsruhe
+title: "Preliminary AI infrastructure walks"
+description: Coming soon 
 date: 2025-05-28
 author: Andreas Liesenfeld
 status: published
 ---
 
-An AI walk description in text and pictures.
-
+Under construction
