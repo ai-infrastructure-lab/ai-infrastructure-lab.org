@@ -1,6 +1,6 @@
 ---
 title: European Open Source AI Index
-description: The index lists open generative AI models for text, image, code, video, & audio. Across the open-source AI landscape, we find large differences in actual openness.
+description: Mapping the European open-source AI landscape.
 date: 2023-11-04
 author: AI Infrastructure Lab
 status: published
