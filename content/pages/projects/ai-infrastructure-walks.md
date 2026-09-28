@@ -1,6 +1,6 @@
 ---
-title: AI Infrastructure walks
-description: Designing AI Infrastructure walks
+title: Designing AI Infrastructure walks
+description: Towards a participatory research method to understand societal and economic implications of emerging digital technology infrastructures
 date: 2026-01-18
 author: AI Infrastructure Lab
 status: published
