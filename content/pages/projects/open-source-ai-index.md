@@ -8,7 +8,6 @@ status: published
 
 Initiated by Andreas Liesenfeld and Mark Dingemanse in 2023, the European Open-Source AI Index conducts academic research on open-source AI, publishes technology assessments, and hosts an open, community-driven database with information on model openness, licensing, and EU regulation of generative AI systems and providers.
 
-<figure>
-  <img src="/images/osai-index.png" alt="Explore OSAI index">
-  <figcaption>[Explore the index](www.osai-index.eu)</figcaption>
-</figure>
+## Read more
+
+  [<img src="/images/osai-index.png" alt="Explore the EU OSAI index">]([www.osai-index.eu/](https://))
