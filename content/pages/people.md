@@ -2,7 +2,7 @@
 # People
 
 ::person{image="/images/headshot-al.jpg" name="Andreas Liesenfeld"}
-__[Andreas Liesenfeld](https://www.ru.nl/personen/liesenfeld-a "Andreas Liesenfeld")__ directs the AI Infrastructure Lab. He is Assistant Professor at the [Centre for Language and Speech Technology (CLST)](https://www.ru.nl/en/cls/clst), Radboud University Nijmegen, where he researches the societal and economic implications of emerging AI technologies. With a background in Natural Language Processing (NLP) and fieldwork methods, his work focuses on technology assessment and digital industries research. He also organizes [AI Infrastructure walks](https://ai-infrastructure-lab.org/aiwalks) and co-founded the [European Open Source AI Index](https://www.osai-index.eu) in 2023 with Mark Dingemanse.
+__[Andreas Liesenfeld](https://www.ru.nl/en/people/liesenfeld-a "Andreas Liesenfeld")__ directs the AI Infrastructure Lab. He is Assistant Professor at the [Centre for Language and Speech Technology (CLST)](https://www.ru.nl/en/cls/clst), Radboud University Nijmegen, where he researches the societal and economic implications of emerging AI technologies. With a background in Natural Language Processing (NLP) and fieldwork methods, his work focuses on technology assessment and digital industries research. He also organizes [AI Infrastructure walks](https://ai-infrastructure-lab.org/aiwalks) and co-founded the [European Open Source AI Index](https://www.osai-index.eu) in 2023 with Mark Dingemanse.
 ::
 
 ::person{image="/images/headshot-db.jpg" name="Dick Blankvoort"}
