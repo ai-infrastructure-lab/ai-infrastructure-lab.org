@@ -12,7 +12,7 @@ Often using fieldwork-based and empirical methods, the lab investigates software
 ## Technology Assessment 
 Evaluate the technical, societal, and ecological footprints of AI models as well as related infrastructures to separate industry hype from practical reality. Past work in this strand includes: Openness and model transparency assessment in the field of 'open source AI', including related regulatory and standardisation processes; Assessment of privacy concerns in voice AI technology. 
 
-## AI Industry Research
+## (Alternative) economic theory
 Tracking developments in the AI industry sector to map evolving market dynamics, identifying business (mal)practices, and, often rooted in antitrust and ecological economics, building theory of economic life in the age of digital platform and infrastructure. 
 
 ## Infrastructure Studies
