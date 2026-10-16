@@ -10,7 +10,7 @@ It is hosted at the [Centre of Language and Speech Technology, Radboud Universit
 Often using fieldwork-based and empirical methods, the lab investigates software and hardware ecosystems that power artificial intelligence, assessing their societal and economic implications. 
 
 ## Technology Assessment 
-Evaluate technical, societal, and ecological footprints of AI models as well as related infrastructures to separate industry hype from practical reality. Past work in this strand includes: Openness and model transparency assessment in the field of 'open source AI', including related regulatory and standardisation processes; Assessment of privacy concerns in voice AI technology. 
+Evaluate technical, societal, and ecological footprints of AI models as well as related infrastructures to separate industry hype from practical reality. Past work in this strand includes: Openness and model transparency assessment in the field of ('open source AI')[www.osai-index.eu], including related regulatory and standardisation processes; Assessment of privacy concerns in voice AI technology. 
 
 ## New economic theory
 Tracking developments in the AI industry sector to map evolving market dynamics, identify business (mal)practices, and, often rooted in antitrust and [new economics](https://en.wikipedia.org/wiki/Institute_for_New_Economic_Thinking), contribute to debate on new modes of economic thinking fit for digital platforms and infrastructure monopolies. 
