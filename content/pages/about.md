@@ -2,7 +2,7 @@
 title: The AI Infrastructure Lab
 ---
 
-Our work combines three strands: AI technology assessment, new economic theory, and infrastructure studies. By tracking developments in this industry sector and evaluating the technical, societal and ecological footprint of new systems, we aim to understand the real-world impact of AI technologies on the way we live and work together. We build on these insights to contribute to debates on European digital sovereignty, rethinking how technological advancement can align with sustainable, localized control over critical infrastructure and sovereign data.
+Our work combines three strands: AI technology assessment, new economic theory, and infrastructure studies. By tracking developments in information infrastructure and evaluating the technical, societal and ecological footprint of AI infrastructure we aim to understand the real-world impact of AI technologies on the way we live and work together. We build on these insights to contribute to academic debate about social and economic theory, and to wider societal debate about technological sovereignty, rethinking how technological advancement can align with local control over critical infrastructure and sovereign data.
 
 It is hosted at the [Centre of Language and Speech Technology, Radboud University, The Netherlands](https://www.ru.nl/en/cls/clst).
 
@@ -10,13 +10,13 @@ It is hosted at the [Centre of Language and Speech Technology, Radboud Universit
 Often using fieldwork-based and empirical methods, the lab investigates software and hardware ecosystems that power artificial intelligence, assessing their societal and economic implications. 
 
 ## Technology Assessment 
-Evaluate the technical, societal, and ecological footprints of AI models as well as related infrastructures to separate industry hype from practical reality. Past work in this strand includes: Openness and model transparency assessment in the field of 'open source AI', including related regulatory and standardisation processes; Assessment of privacy concerns in voice AI technology. 
+Evaluate technical, societal, and ecological footprints of AI models as well as related infrastructures to separate industry hype from practical reality. Past work in this strand includes: Openness and model transparency assessment in the field of 'open source AI', including related regulatory and standardisation processes; Assessment of privacy concerns in voice AI technology. 
 
 ## New economic theory
-Tracking developments in the AI industry sector to map evolving market dynamics, identifying business (mal)practices, and, often rooted in antitrust and [new economics](https://en.wikipedia.org/wiki/Institute_for_New_Economic_Thinking), with the aim to promote new modes of economic thinking fit for digital platforms and infrastructure monopolies. 
+Tracking developments in the AI industry sector to map evolving market dynamics, identify business (mal)practices, and, often rooted in antitrust and [new economics](https://en.wikipedia.org/wiki/Institute_for_New_Economic_Thinking), contribute to debate on new modes of economic thinking fit for digital platforms and infrastructure monopolies. 
 
 ## Infrastructure Studies
-Developing frameworks to understand large scale AI-related infrastructure such as fibre-optic networks and datacenters, and rethinking how technological advancement can align with sustainable, localized control over critical infrastructure and sovereign data to empower organizations and policymakers.
+Developing frameworks to understand large-scale AI-related information infrastructure such as fibre-optic networks and datacenters, and rethinking how technological advancement can align with localized control over critical infrastructure and sovereign data.
 
 
 # Advisory Board
