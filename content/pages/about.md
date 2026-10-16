@@ -7,7 +7,7 @@ Our work combines three strands: AI technology assessment, new economic theory, 
 It is hosted at the [Centre of Language and Speech Technology, Radboud University, The Netherlands](https://www.ru.nl/en/cls/clst).
 
 # What we do
-Since 2022, the lab investigates software and hardware technologies, ecosystems, and organisations related to the rise of artificial intelligence industries, assessing their societal and economic implications. Often using fieldwork-based, participatory, and empirical methods, we try to work with people from all walks of life, for instance through ‘AI infrastructure walk’ events. For more info, follow us on Mastodon.
+Since 2022, the lab investigates software and hardware technologies, ecosystems, and organisations related to the AI industry, assessing their societal and economic implications. Often using fieldwork-based, participatory, and empirical methods, we try to work with people from all walks of life, for instance through ‘AI infrastructure walk’ events. For more info, follow us on Mastodon.
 
 ##Technology Assessment 
 Broadly defined risk assessment of AI-related technologies, focussing not only on unintended consequences of development and deployment but also emerging societal, systemic and economic risks related to AI industries and infrastructures. Past work in this strand includes: (1) Evaluation of technical, societal, and ecological footprints of AI models as well as related infrastructures to separate industry hype from practical reality; (2) Openness and model transparency assessment in the field of [open source AI](https://www.osai-index.eu), including related regulatory and standardisation processes; (3) Assessment of privacy concerns in voice AI technology. 
